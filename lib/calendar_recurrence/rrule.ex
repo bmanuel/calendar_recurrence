@@ -92,6 +92,13 @@ defmodule CalendarRecurrence.RRULE do
     string |> parse!() |> to_recurrence(start)
   end
 
+  @doc """
+  Prints the RRULE struct as an rrule formatted string.
+  """
+  @spec to_string(t()) :: String.t()
+  def to_string(%RRULE{} = rrule) do
+  end
+
   defp stop(rrule) do
     cond do
       rrule.count -> {:count, rrule.count}
@@ -106,6 +113,7 @@ defmodule CalendarRecurrence.RRULE do
 
   defp step(%RRULE{freq: :weekly, byday: days_of_week, interval: interval}) do
     days_of_week = Enum.sort(days_of_week)
+
     fn current ->
       current_day_of_week = Date.day_of_week(current)
       next_day_of_week = Enum.find(days_of_week, &(&1 > current_day_of_week))

@@ -1,0 +1,9 @@
+{application,calendar_interval,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"calendar_interval"},
+              {modules,['Elixir.CalendarInterval',
+                        'Elixir.Enumerable.CalendarInterval',
+                        'Elixir.Inspect.CalendarInterval',
+                        'Elixir.String.Chars.CalendarInterval']},
+              {registered,[]},
+              {vsn,"0.1.0-dev"}]}.
